@@ -8,7 +8,7 @@ import { useState } from "react";
 const navItems = [
   { name: "Emotions", href: "#" },
   { name: "Manifesto", href: "#" },
-  { name: "Self-Awareness test", href: "#" },
+  { name: "Self-awareness test", href: "#" },
   { name: "Work With Us", href: "#" },
 ];
 
@@ -19,17 +19,17 @@ export default function Navbar() {
     <div className="bg-white">
       <header className="inset-x-0 top-0 z-50">
         <nav
-          className="flex items-center justify-between p-6 lg:px-8"
+          className="flex items-center justify-between p-6 lg:px-20"
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <Image
-                className="h-8 w-auto"
-                src=""
+                src="/logo.png"
                 alt="Logo"
-                width={32}
-                height={32}
+                width={60}
+                height={60}
+                className="rounded-lg"
               />
             </a>
           </div>
@@ -73,11 +73,11 @@ export default function Navbar() {
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <Image
-                  className="h-8 w-auto"
-                  src=""
+                  src="/logo.png"
                   alt="Logo"
                   width={32}
                   height={32}
+                  className="rounded-lg"
                 />
               </a>
               <button
