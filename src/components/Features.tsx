@@ -41,7 +41,7 @@ export default function Features() {
       </div>
 
       {/* text grid */}
-      <div className="my-40 m-16 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-12">
+      <div className="my-40 m-16 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-12 lg:mx-48">
         <div className="h-32 lg:w-60 rounded-lg flex justify-center text-3xl font-semibold">
           Be the best you with EQ
         </div>
