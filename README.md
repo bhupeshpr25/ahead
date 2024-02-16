@@ -4,6 +4,8 @@
 
 Website of an emotional intelligence app with latest technologies and best practices
 
+<p align="center"><img width="400" height="200" src="./public/lighthouse.png"></p>
+
 ## Tech Stack
 
 The tech stack for this API includes:
