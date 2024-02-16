@@ -1,6 +1,5 @@
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
-import React from "react";
 
 export default function Footer() {
   return (
