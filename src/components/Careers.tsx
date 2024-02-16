@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Benefits from "./Benefits";
 
 interface Vacancy {
   title: string;
@@ -79,10 +80,7 @@ export default function Careers() {
               </div>
             </div>
             <div className="h-32 rounded-lg bg-gray-200">
-              {/* right side */}
-              <div className="text-md mt-10 lg:text-2xl lg:mt-0 text-gray-700">
-                scroll area
-              </div>
+              <Benefits />
             </div>
           </div>
         </div>
