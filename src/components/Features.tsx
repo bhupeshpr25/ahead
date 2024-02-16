@@ -40,6 +40,56 @@ export default function Features() {
         </div>
       </div>
 
+      {/* vertical timeline */}
+      <section className="container max-w-5xl px-4 py-12 mx-auto">
+        <div className="my-10">
+          <div className="text-sm lg:text-md font-semibold">
+            Wrong with self-improvement & how we are fixing it
+          </div>
+          <div className="mt-4 text-3xl font-bold lg:mt-2">
+            Self-improvement. Ugh.
+          </div>
+        </div>
+        <div className="m-4 px-2 lg:px-24">
+          <div className="relative col-span-12 px-4 space-y-6 sm:col-span-8 sm:space-y-8">
+            <div className="col-span-12 space-y-12 relative px-4 sm:space-y-8 before:block before:absolute before:top-2 before:bottom-0 before:w-0.5 before:-left-3 before:bg-violet-400">
+              <div className="flex flex-col">
+                <div className="h-4 w-4 rounded-full bg-violet-400 relative left-[-35px] z-[1] border-8 border-double border-violet-800 animate-pulse"></div>
+                <h3 className="-mt-5 text-xl font-semibold">
+                  Its not as easy as 1-2-3
+                </h3>
+                <p className="mt-3">
+                  The journey of change may be long, but our sessions are quick.
+                  We get to the point and tell you what you want to know (and
+                  nothing else)
+                </p>
+              </div>
+              <div className="flex flex-col">
+                <div className="h-4 w-4 rounded-full bg-violet-600 relative left-[-35px] z-[1]"></div>
+                <h3 className="-mt-5 text-xl font-semibold">
+                  Old habits are hard to break
+                </h3>
+                <p className="mt-3">
+                  And bad behaviors die hard. Fortunately, we give you great,
+                  science-backed techniques to use.
+                </p>
+              </div>
+              <div className="flex flex-col">
+                <div className="h-4 w-4 rounded-full bg-violet-600 relative left-[-35px] z-[1]"></div>
+                <h3 className="-mt-5 text-xl font-semibold">
+                  You and your motivation dont have a long-term relationship.
+                </h3>
+                <p className="mt-3">
+                  Luckily, we can proactively prepare you for the marathon, not
+                  just the race. Effective, memorable exercises will help you
+                  stick to your goals.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* text grid */}
       <div className="my-40 m-16 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-12 lg:mx-48">
         <div className="h-32 lg:w-60 rounded-lg flex justify-center text-3xl font-semibold">
