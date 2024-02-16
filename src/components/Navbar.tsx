@@ -6,10 +6,10 @@ import Image from "next/image";
 import { useState } from "react";
 
 const navItems = [
-  { name: "Emotions", href: "#" },
-  { name: "Manifesto", href: "#" },
-  { name: "Self-awareness test", href: "#" },
-  { name: "Work With Us", href: "#" },
+  { name: "Emotions", href: "#carousel" },
+  { name: "Manifesto", href: "#features" },
+  { name: "Self-awareness test", href: "#call-to-action" },
+  { name: "Work With Us", href: "#careers" },
 ];
 
 export default function Navbar() {

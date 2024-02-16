@@ -13,10 +13,18 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <Carousel />
-      <Features />
-      <CallToAction />
-      <Careers />
+      <div id="carousel">
+        <Carousel />
+      </div>
+      <div id="features">
+        <Features />
+      </div>
+      <div id="call-to-action">
+        <CallToAction />
+      </div>
+      <div id="careers">
+        <Careers />
+      </div>
       <Footer />
     </>
   );
