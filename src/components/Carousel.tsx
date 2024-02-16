@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 interface Card {
   emoji: string;
@@ -8,12 +8,27 @@ interface Card {
   description: string;
 }
 
-const CarouselCard: React.FC<{ card: Card }> = ({ card }) => {
-  return (
-    <article className="rounded-xl border border-gray-700 bg-gray-800 p-4 w-72">
-      <div className="flex items-center text-5xl">{card.emoji}</div>
+//assign random colors to carousel cards
+const getRandomColor = (): string => {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
 
-      <h3 className="mt-4 font-medium text-lg text-white">{card.title}</h3>
+const CarouselCard: React.FC<{ card: Card }> = ({ card }) => {
+  const [bgColor] = useState<string>(getRandomColor());
+
+  return (
+    <article
+      className={`rounded-xl p-4 w-72`}
+      style={{ backgroundColor: bgColor }}
+    >
+      <div className="flex items-center text-3xl">{card.emoji}</div>
+
+      <h3 className="font-medium text-lg text-white">{card.title}</h3>
 
       <p className="mt-1 text-md text-gray-300">{card.description}</p>
     </article>
@@ -64,25 +79,19 @@ const Carousel: React.FC = () => {
     },
   ];
 
-  //for randomizing the cards
   const numCards = cards.length;
   const repetitions = 3;
 
   return (
-    <div>
-      <h1 className="text-3xl lg:text-5xl font-bold ml:12 lg:ml-48">
-        Does this sound familiar...
-      </h1>
-      <div className="flex overflow-hidden my-20 space-x-4 group">
-        <div
-          className="flex space-x-10 animate-loop-scroll group-hover:paused"
-          aria-hidden="true"
-        >
-          {Array.from({ length: numCards * repetitions }).map((_, index) => {
-            const cardIndex = index % numCards;
-            return <CarouselCard key={index} card={cards[cardIndex]} />;
-          })}
-        </div>
+    <div className="flex overflow-hidden space-x-4 group">
+      <div
+        className="flex space-x-10 animate-loop-scroll group-hover:paused"
+        aria-hidden="true"
+      >
+        {Array.from({ length: numCards * repetitions }).map((_, index) => {
+          const cardIndex = index % numCards;
+          return <CarouselCard key={index} card={cards[cardIndex]} />;
+        })}
       </div>
     </div>
   );
