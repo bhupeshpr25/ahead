@@ -35,17 +35,22 @@ const Benefits: React.FC = () => {
   ];
 
   return (
-    <div className="max-h-[200px] lg:max-h-[600px] overflow-y-auto bg-violet-100">
-      <div className="grid grid-cols-1 gap-8 scrollbar">
-        {benefits.map((benefit, index) => (
-          <div
-            key={index}
-            className="bg-white shadow-md rounded-xl p-4 lg:p-10"
-          >
-            <h2 className="text-xl font-semibold">{benefit.title}</h2>
-            <p className="mt-4 text-gray-600">{benefit.description}</p>
-          </div>
-        ))}
+    <div className=" bg-violet-100">
+      <h1 className="hidden lg:block mb-16 text-5xl font-semibold text-violet-800 text-end">
+        ahead
+      </h1>
+      <div className="max-h-[200px] lg:max-h-[600px] overflow-y-auto">
+        <div className="grid grid-cols-1 gap-8 scrollbar">
+          {benefits.map((benefit, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-md rounded-xl p-4 lg:p-10"
+            >
+              <h2 className="text-xl font-semibold">{benefit.title}</h2>
+              <p className="mt-4 text-gray-600">{benefit.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
