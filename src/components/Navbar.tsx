@@ -5,7 +5,12 @@ import { Dialog } from "@headlessui/react";
 import Image from "next/image";
 import { useState } from "react";
 
-const navItems = [
+interface NavItem {
+  name: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
   { name: "Emotions", href: "#carousel" },
   { name: "Manifesto", href: "#features" },
   { name: "Self-awareness test", href: "#call-to-action" },
