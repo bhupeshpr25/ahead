@@ -84,7 +84,7 @@ export default function CallToAction() {
       <div className="bg-white">
         <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-gray-800 text-sm my-4">
+            <p className="text-gray-800 lg:text-lg my-4">
               We take privacy seriously
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -95,7 +95,12 @@ export default function CallToAction() {
               which friends said what about you)
             </p>
 
-            <p className="text-gray-800 my-10">with love, Team ahead</p>
+            <div className="text-gray-800 my-10 flex items-center justify-center space-x-2">
+              <p className="font-medium">with love</p>
+              <p className="font-bold font-mono text-xl underline">
+                Team ahead
+              </p>
+            </div>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <button className="cursor-pointer group relative flex gap-1.5 px-8 py-4 bg-black bg-opacity-80 text-white rounded-3xl hover:bg-opacity-70 transition font-semibold shadow-md">
                 Start a test
