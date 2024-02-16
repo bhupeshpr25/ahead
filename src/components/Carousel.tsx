@@ -84,7 +84,7 @@ const Carousel: React.FC = () => {
 
   return (
     <div>
-      <h1 className="text-3xl lg:text-5xl font-bold m-20">
+      <h1 className="text-3xl lg:text-5xl font-bold m-5 mb-20 lg:m-20">
         Does this sound familiar...
       </h1>
       <div className="flex overflow-hidden space-x-4 group">
