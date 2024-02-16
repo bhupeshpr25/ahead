@@ -107,7 +107,7 @@ export default function Careers() {
             translate-y-8 ease-in-out block
             lg:absolute group-hover:visible pr-10
             pl-10 pt-2 pb-2 mt-2 ml-4 mb-10 bg-gray-900
-            text-white rounded-lg lg:invisible hover:bg-gray-800 group-hover:-translate-y-10"
+            text-white rounded-lg lg:invisible hover:bg-gray-800 lg:group-hover:-translate-y-10"
               >
                 See Details
               </button>
