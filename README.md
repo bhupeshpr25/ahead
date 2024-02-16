@@ -4,7 +4,7 @@
 
 Website of an emotional intelligence app with latest technologies and best practices
 
-<p align="center"><img width="400" height="200" src="./public/lighthouse.png"></p>
+<p align="center"><img width="800" height="200" src="./public/lighthouse.png"></p>
 
 ## Tech Stack
 
@@ -25,7 +25,7 @@ The tech stack for this API includes:
 
 ### 1. clone the repository
 
-`git clone https://github.com/bhupeshpr25/mortyverse`
+`git clone https://github.com/bhupeshpr25/ahead`
 
 ### 2. install dependencies
 
