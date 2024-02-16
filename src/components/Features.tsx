@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Features() {
   return (
-    <div>
+    <div className="my-20 lg:mt-40">
       {/* colored section */}
       <div className="bg-red-50 rounded-3xl m-8 mt-4">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-2 lg:py-32">
@@ -43,14 +43,14 @@ export default function Features() {
       {/* vertical timeline */}
       <section className="container max-w-5xl px-4 py-12 mx-auto">
         <div className="my-10">
-          <div className="text-sm lg:text-md font-semibold">
+          <div className="text-sm lg:text-xl font-semibold">
             Wrong with self-improvement & how we are fixing it
           </div>
-          <div className="mt-4 text-3xl font-bold lg:mt-2">
+          <div className="mt-4 text-3xl lg:text-5xl font-bold lg:mt-2">
             Self-improvement. Ugh.
           </div>
         </div>
-        <div className="m-4 px-2 lg:px-24">
+        <div className="m-4 mt-20 px-2 lg:px-24">
           <div className="relative col-span-12 px-4 space-y-6 sm:col-span-8 sm:space-y-8">
             <div className="col-span-12 space-y-12 relative px-4 sm:space-y-8 before:block before:absolute before:top-2 before:bottom-0 before:w-0.5 before:-left-3 before:bg-violet-400">
               <div className="flex flex-col">
