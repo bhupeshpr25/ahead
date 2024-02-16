@@ -83,15 +83,20 @@ const Carousel: React.FC = () => {
   const repetitions = 3;
 
   return (
-    <div className="flex overflow-hidden space-x-4 group">
-      <div
-        className="flex space-x-10 animate-loop-scroll group-hover:paused"
-        aria-hidden="true"
-      >
-        {Array.from({ length: numCards * repetitions }).map((_, index) => {
-          const cardIndex = index % numCards;
-          return <CarouselCard key={index} card={cards[cardIndex]} />;
-        })}
+    <div>
+      <h1 className="text-3xl lg:text-5xl font-bold m-20">
+        Does this sound familiar...
+      </h1>
+      <div className="flex overflow-hidden space-x-4 group">
+        <div
+          className="flex space-x-10 animate-loop-scroll group-hover:paused"
+          aria-hidden="true"
+        >
+          {Array.from({ length: numCards * repetitions }).map((_, index) => {
+            const cardIndex = index % numCards;
+            return <CarouselCard key={index} card={cards[cardIndex]} />;
+          })}
+        </div>
       </div>
     </div>
   );
