@@ -4,9 +4,42 @@ import { useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
+interface TimelineItem {
+  title: string;
+  description: string;
+}
+
 export default function Features() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+
+  const timelineItems: TimelineItem[] = [
+    {
+      title: "Its not as easy as 1-2-3",
+      description:
+        "The journey of change may be long, but our sessions are quick. We get to the point (and tell you what you want to know and nothing else)",
+    },
+    {
+      title: "Old habits are hard to break",
+      description:
+        "And bad behaviors die hard. Fortunately, we give you great, science-backed techniques to use. ",
+    },
+    {
+      title: "You and your motivation dont have a long-term relationship.",
+      description:
+        "Luckily, we can proactively prepare you for the marathon, not just the race. Effective, memorable exercises will help you stick to your goals. ",
+    },
+    {
+      title: "Habitual behavior is difficult to change",
+      description:
+        "Our tools and techniques are designed to break through the toughest of habits, allowing you to achieve your goals. ",
+    },
+    {
+      title: "Stay motivated with regular reminders and check-ins",
+      description:
+        "We send you friendly reminders and check-ins to keep you on track and motivated towards your goals. ",
+    },
+  ];
 
   return (
     <div ref={ref} className="my-20 lg:mt-40">
@@ -83,38 +116,17 @@ export default function Features() {
         <div className="m-4 mt-20 px-2 lg:px-24">
           <div className="relative col-span-12 px-4 space-y-6 sm:col-span-8 sm:space-y-8">
             <div className="col-span-12 space-y-12 relative px-4 sm:space-y-8 before:block before:absolute before:top-2 before:bottom-0 before:w-0.5 before:-left-3 before:bg-violet-400">
-              <div className="flex flex-col">
-                <div className="h-4 w-4 rounded-full bg-violet-400 relative left-[-35px] z-[1] border-8 border-double border-violet-800 animate-pulse"></div>
-                <h3 className="-mt-5 text-xl font-semibold">
-                  Its not as easy as 1-2-3
-                </h3>
-                <p className="mt-3">
-                  The journey of change may be long, but our sessions are quick.
-                  We get to the point and tell you what you want to know (and
-                  nothing else)
-                </p>
-              </div>
-              <div className="flex flex-col">
-                <div className="h-4 w-4 rounded-full bg-violet-600 relative left-[-35px] z-[1]"></div>
-                <h3 className="-mt-5 text-xl font-semibold">
-                  Old habits are hard to break
-                </h3>
-                <p className="mt-3">
-                  And bad behaviors die hard. Fortunately, we give you great,
-                  science-backed techniques to use.
-                </p>
-              </div>
-              <div className="flex flex-col">
-                <div className="h-4 w-4 rounded-full bg-violet-600 relative left-[-35px] z-[1]"></div>
-                <h3 className="-mt-5 text-xl font-semibold">
-                  You and your motivation dont have a long-term relationship.
-                </h3>
-                <p className="mt-3">
-                  Luckily, we can proactively prepare you for the marathon, not
-                  just the race. Effective, memorable exercises will help you
-                  stick to your goals.
-                </p>
-              </div>
+              {timelineItems.map((item, index) => (
+                <div key={index} className="flex flex-col">
+                  <div className="h-4 w-4 rounded-full bg-violet-400 relative left-[-35px] z-[1] border-8 border-double border-violet-800 animate-pulse"></div>
+                  <div className=" lg:text-gray-500 lg:hover:text-gray-900">
+                    <h3 className="-mt-5 text-xl font-semibold">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3">{item.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
