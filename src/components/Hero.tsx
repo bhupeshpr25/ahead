@@ -2,13 +2,25 @@
 
 import { StarIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 export default function Hero() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <div>
+    <div ref={ref}>
       <div className="bg-purple-100 rounded-3xl m-8 mt-4">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-32">
-          <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
+          <div
+            className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto"
+            style={{
+              transform: isInView ? "none" : "translateX(-200px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+            }}
+          >
             <div className="flex">
               <div className="relative flex items-center gap-x-4 ml-1 rounded-full font-semibold text-gray-900">
                 Ahead app
@@ -25,7 +37,6 @@ export default function Hero() {
                 alt="AppStore"
                 width={300}
                 height={60}
-                className=""
               />
               <div className="ml-2 lg:-ml-8">
                 <div className="flex items-center">
@@ -43,7 +54,15 @@ export default function Hero() {
           </div>
 
           {/* hero image */}
-          <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
+          <div
+            className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow"
+            style={{
+              transform: isInView ? "none" : "scale(0.5)",
+              opacity: isInView ? 1 : 0,
+              transition:
+                "transform  0.2s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s, opacity   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.2s",
+            }}
+          >
             <Image src="/hero.png" alt="Hero" width={500} height={500} />
           </div>
         </div>
