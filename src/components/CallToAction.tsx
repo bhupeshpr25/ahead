@@ -8,8 +8,8 @@ export default function CallToAction() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div>
-      <div ref={ref} className="bg-blue-100 rounded-3xl m-8 my-20">
+    <div ref={ref}>
+      <div className="bg-blue-100 rounded-3xl m-8 my-20">
         <div className="px-6 py-10 sm:py-32 lg:flex lg:items-center lg:px-2 lg:py-32">
           <div
             className="mx-auto max-w-full text-center"
@@ -96,15 +96,14 @@ export default function CallToAction() {
 
       {/* call to action */}
       <div className="bg-white">
-        <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
+        <div ref={ref} className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
           <div
-            ref={ref}
             className="mx-auto max-w-2xl text-center"
             style={{
               transform: isInView ? "none" : "scale(0.5)",
               opacity: isInView ? 1 : 0,
               transition:
-                "transform  0.5s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s, opacity   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s",
+                "transform  0.5s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s, opacity   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)  2s",
             }}
           >
             <p className="text-gray-800 lg:text-lg my-4">

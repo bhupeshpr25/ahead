@@ -18,7 +18,7 @@ export default function Hero() {
             style={{
               transform: isInView ? "none" : "translateX(-200px)",
               opacity: isInView ? 1 : 0,
-              transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}
           >
             <div className="flex">
@@ -60,7 +60,7 @@ export default function Hero() {
               transform: isInView ? "none" : "scale(0.5)",
               opacity: isInView ? 1 : 0,
               transition:
-                "transform  0.2s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s, opacity   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.2s",
+                "transform  0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s, opacity   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s",
             }}
           >
             <Image src="/hero.png" alt="Hero" width={500} height={500} />

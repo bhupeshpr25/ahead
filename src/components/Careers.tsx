@@ -47,7 +47,7 @@ export default function Careers() {
   ];
 
   return (
-    <div>
+    <div ref={ref}>
       {/* work with us */}
       <div className="bg-violet-100 rounded-3xl m-8 mt-4">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 flex flex-col lg:grid lg:items-center lg:gap-x-6 lg:px-2 lg:py-32">
@@ -99,14 +99,13 @@ export default function Careers() {
       </div>
 
       {/* vacancies */}
-      <div className="my-20 px-8 lg:my-40 lg:px-24">
+      <div ref={ref} className="my-20 px-8 lg:my-40 lg:px-24">
         <div
-          ref={ref}
           className="text-3xl font-bold my-20 lg:text-5xl"
           style={{
             transform: isInView ? "none" : "translateX(-200px)",
             opacity: isInView ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 2s",
           }}
         >
           Open vacancies

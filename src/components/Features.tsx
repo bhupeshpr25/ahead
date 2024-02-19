@@ -9,16 +9,16 @@ export default function Features() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div className="my-20 lg:mt-40">
+    <div ref={ref} className="my-20 lg:mt-40">
       {/* colored section */}
-      <div ref={ref} className="bg-red-50 rounded-3xl m-8 mt-4">
+      <div className="bg-red-50 rounded-3xl m-8 mt-4">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-2 lg:py-32">
           <div
             className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto"
             style={{
               transform: isInView ? "none" : "translateX(-200px)",
               opacity: isInView ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}
           >
             <div className="flex">
@@ -45,7 +45,7 @@ export default function Features() {
               transform: isInView ? "none" : "scale(0.5)",
               opacity: isInView ? 1 : 0,
               transition:
-                "transform  0.2s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s, opacity   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.2s",
+                "transform  0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s, opacity   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s",
             }}
           >
             <p>
@@ -68,7 +68,7 @@ export default function Features() {
           style={{
             transform: isInView ? "none" : "translateX(-200px)",
             opacity: isInView ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 2s",
           }}
         >
           <div className="text-sm lg:text-xl font-semibold">
