@@ -112,7 +112,10 @@ export default function Careers() {
         </div>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-6">
           {vacancies.map((vacancy, index) => (
-            <div key={index} className="p-8 rounded-3xl bg-yellow-100 group">
+            <div
+              key={index}
+              className="p-8 rounded-3xl bg-yellow-100 hover:bg-yellow-200 group"
+            >
               <div className="text-xl font-bold">{vacancy.title}</div>
               <ul className="list-disc p-4 pb-12">
                 <li className="my-1">{vacancy.type}</li>
