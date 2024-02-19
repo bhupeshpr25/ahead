@@ -54,16 +54,34 @@ export default function Hero() {
           </div>
 
           {/* hero image */}
-          <div
-            className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow"
-            style={{
-              transform: isInView ? "none" : "scale(0.5)",
-              opacity: isInView ? 1 : 0,
-              transition:
-                "transform  0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s, opacity   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s",
-            }}
-          >
-            <Image src="/hero.png" alt="Hero" width={500} height={500} />
+          <div className="relative mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
+            <Image
+              src="/hero-circle.png"
+              alt=""
+              width={500}
+              height={500}
+              style={{
+                transform: isInView ? "rotate(0deg)" : "rotate(360deg)",
+                opacity: isInView ? 1 : 0,
+                transition:
+                  "transform  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s, opacity  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s",
+                animation: isInView ? "none" : "spin  4s linear infinite",
+              }}
+            />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Image
+                src="/hero-phone.png"
+                alt=""
+                width={400}
+                height={400}
+                style={{
+                  transform: isInView ? "none" : "scale(0.5)",
+                  opacity: isInView ? 1 : 0,
+                  transition:
+                    "transform   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s, opacity   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s",
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
