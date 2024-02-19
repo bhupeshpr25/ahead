@@ -1,11 +1,25 @@
 "use client";
 
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+
 export default function CallToAction() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <div>
-      <div className="bg-blue-100 rounded-3xl m-8 my-20">
+      <div ref={ref} className="bg-blue-100 rounded-3xl m-8 my-20">
         <div className="px-6 py-10 sm:py-32 lg:flex lg:items-center lg:px-2 lg:py-32">
-          <div className="mx-auto max-w-full text-center">
+          <div
+            className="mx-auto max-w-full text-center"
+            style={{
+              transform: isInView ? "none" : "scale(0.5)",
+              opacity: isInView ? 1 : 0,
+              transition:
+                "transform  0.5s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s, opacity   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s",
+            }}
+          >
             <p className="my-4 text-gray-800 font-semibold lg:text-lg">
               Let your friends, family, and co-workers (anonymously) rate your
               social skills.
@@ -83,7 +97,16 @@ export default function CallToAction() {
       {/* call to action */}
       <div className="bg-white">
         <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
+          <div
+            ref={ref}
+            className="mx-auto max-w-2xl text-center"
+            style={{
+              transform: isInView ? "none" : "scale(0.5)",
+              opacity: isInView ? 1 : 0,
+              transition:
+                "transform  0.5s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s, opacity   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s",
+            }}
+          >
             <p className="text-gray-800 lg:text-lg my-4">
               We take privacy seriously
             </p>

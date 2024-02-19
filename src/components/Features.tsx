@@ -11,7 +11,7 @@ export default function Features() {
   return (
     <div className="my-20 lg:mt-40">
       {/* colored section */}
-      <div className="bg-red-50 rounded-3xl m-8 mt-4" ref={ref}>
+      <div ref={ref} className="bg-red-50 rounded-3xl m-8 mt-4">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-2 lg:py-32">
           <div
             className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto"
@@ -42,9 +42,10 @@ export default function Features() {
           <div
             className="text-md mt-10 lg:text-2xl lg:mt-0 text-gray-700"
             style={{
+              transform: isInView ? "none" : "scale(0.5)",
               opacity: isInView ? 1 : 0,
               transition:
-                "opacity  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.1s",
+                "transform  0.2s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s, opacity   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.2s",
             }}
           >
             <p>
@@ -61,9 +62,8 @@ export default function Features() {
       </div>
 
       {/* timeline header */}
-      <section className="container max-w-5xl px-4 py-12 mx-auto">
+      <section ref={ref} className="container max-w-5xl px-4 py-12 mx-auto">
         <div
-          ref={ref}
           className="my-10"
           style={{
             transform: isInView ? "none" : "translateX(-200px)",
