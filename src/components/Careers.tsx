@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useInView } from "framer-motion";
 import Benefits from "./Benefits";
 
 interface Vacancy {
@@ -12,6 +13,9 @@ interface Vacancy {
 
 export default function Careers() {
   const [isHovered, setIsHovered] = useState(false);
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -50,8 +54,16 @@ export default function Careers() {
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
             <div className="h-full rounded-lg lg:col-span-2">
               {/* left side */}
-              <div className="max-w-2xl lg:mx-0">
-                <h1 className="mt-5 max-w-lg text-2xl font-bold text-gray-900 lg:text-5xl">
+              <div className="max-w-2xl lg:mx-0" ref={ref}>
+                <h1
+                  className="mt-5 max-w-lg text-2xl font-bold text-gray-900 lg:text-5xl"
+                  style={{
+                    transform: isInView ? "none" : "translateX(-200px)",
+                    opacity: isInView ? 1 : 0,
+                    transition:
+                      "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                  }}
+                >
                   Work with us
                 </h1>
                 <div className="w-full my-10 bg-white max-w-lg rounded-xl">
@@ -88,7 +100,15 @@ export default function Careers() {
 
       {/* vacancies */}
       <div className="my-20 px-8 lg:my-40 lg:px-24">
-        <div className="text-3xl font-bold my-20 lg:text-5xl">
+        <div
+          ref={ref}
+          className="text-3xl font-bold my-20 lg:text-5xl"
+          style={{
+            transform: isInView ? "none" : "translateX(-200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+        >
           Open vacancies
         </div>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-6">

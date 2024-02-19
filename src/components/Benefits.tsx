@@ -1,11 +1,17 @@
 "use client";
 
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+
 interface Benefit {
   title: string;
   description: string;
 }
 
 const Benefits: React.FC = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   const benefits: Benefit[] = [
     {
       title: "Power through, even when the going gets tough",
@@ -35,8 +41,15 @@ const Benefits: React.FC = () => {
   ];
 
   return (
-    <div className=" bg-violet-100">
-      <h1 className="hidden lg:block mb-16 text-5xl font-semibold text-violet-800 text-end">
+    <div className=" bg-violet-100" ref={ref}>
+      <h1
+        className="hidden lg:block mb-16 text-5xl font-semibold text-violet-800 text-end"
+        style={{
+          transform: isInView ? "none" : "translateX(2400px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        }}
+      >
         ahead
       </h1>
       <div className="max-h-[200px] lg:max-h-[600px] overflow-y-auto">

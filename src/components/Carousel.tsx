@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useInView, useTransform } from "framer-motion";
+import { useState, useRef } from "react";
 
 interface Card {
   emoji: string;
@@ -38,6 +38,8 @@ const CarouselCard: React.FC<{ card: Card }> = ({ card }) => {
 
 const Carousel: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number>(-1);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
@@ -83,21 +85,18 @@ const Carousel: React.FC = () => {
   const numCards = cards.length;
   const repetitions = 3;
 
-  const slideInFromLeft = {
-    hidden: { x: "-100%", opacity: 0 },
-    enter: { x: "0%", opacity: 1, transition: { duration: 0.5 } },
-  };
-
   return (
-    <div>
-      <motion.h1
+    <div ref={ref}>
+      <motion.div
         className="text-3xl lg:text-5xl font-bold m-5 mb-20 lg:m-20"
-        variants={slideInFromLeft}
-        initial="hidden"
-        animate="enter"
+        style={{
+          transform: isInView ? "none" : "translateX(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        }}
       >
         Does this sound familiar...
-      </motion.h1>
+      </motion.div>
 
       <div className="flex overflow-hidden space-x-4 group">
         <div
