@@ -8,6 +8,10 @@
   }
 }
 
+body {
+  @apply overflow-x-hidden;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

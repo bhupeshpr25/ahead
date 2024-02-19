@@ -57,6 +57,22 @@ export default function Features() {
             }}
           >
             <div className="flex">
+              <motion.img
+                ref={imgRef}
+                src="/flower-petal.png"
+                alt=""
+                width={100}
+                height={100}
+                className="absolute -mt-20 -ml-40 self-end"
+                style={{
+                  right: 0,
+                  transform: isImgInView ? "rotate(0deg)" : "rotate(360deg)",
+                  opacity: isImgInView ? 1 : 0,
+                  transition:
+                    "transform 0.5s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s, opacity  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s",
+                  animation: isImgInView ? "none" : "spin  1s linear infinite",
+                }}
+              />
               <div className="relative flex items-center gap-x-4 ml-1 rounded-full font-semibold text-gray-900">
                 Built out of frustration
               </div>

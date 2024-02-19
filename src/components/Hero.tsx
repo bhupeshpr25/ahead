@@ -3,7 +3,7 @@
 import { StarIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { useRef } from "react";
-import { useInView } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -12,6 +12,37 @@ export default function Hero() {
   return (
     <div ref={ref}>
       <div className="bg-purple-100 rounded-3xl m-8 mt-4">
+        <motion.img
+          ref={ref}
+          src="/petal.png"
+          alt=""
+          width={60}
+          height={60}
+          className="ml-40"
+          style={{
+            transform: isInView ? "rotate(0deg)" : "rotate(360deg)",
+            opacity: isInView ? 1 : 0,
+            transition:
+              "transform  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s, opacity  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s",
+            animation: isInView ? "none" : "spin  4s linear infinite",
+          }}
+        />
+
+        <motion.img
+          ref={ref}
+          src="/flower-petal.png"
+          alt=""
+          width={100}
+          height={100}
+          className="absolute mt-24 ml-[500px]"
+          style={{
+            transform: isInView ? "rotate(0deg)" : "rotate(360deg)",
+            opacity: isInView ? 1 : 0,
+            transition:
+              "transform  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s, opacity  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s",
+            animation: isInView ? "none" : "spin  4s linear infinite",
+          }}
+        />
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-32">
           <div
             className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto"
