@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 interface Card {
@@ -82,11 +83,22 @@ const Carousel: React.FC = () => {
   const numCards = cards.length;
   const repetitions = 3;
 
+  const slideInFromLeft = {
+    hidden: { x: "-100%", opacity: 0 },
+    enter: { x: "0%", opacity: 1, transition: { duration: 0.5 } },
+  };
+
   return (
     <div>
-      <h1 className="text-3xl lg:text-5xl font-bold m-5 mb-20 lg:m-20">
+      <motion.h1
+        className="text-3xl lg:text-5xl font-bold m-5 mb-20 lg:m-20"
+        variants={slideInFromLeft}
+        initial="hidden"
+        animate="enter"
+      >
         Does this sound familiar...
-      </h1>
+      </motion.h1>
+
       <div className="flex overflow-hidden space-x-4 group">
         <div
           className="flex space-x-10 animate-loop-scroll group-hover:paused"

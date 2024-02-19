@@ -39,7 +39,7 @@ export default function Features() {
         </div>
       </div>
 
-      {/* vertical timeline */}
+      {/* timeline header */}
       <section className="container max-w-5xl px-4 py-12 mx-auto">
         <div className="my-10">
           <div className="text-sm lg:text-xl font-semibold">
@@ -49,6 +49,8 @@ export default function Features() {
             Self-improvement. Ugh.
           </div>
         </div>
+
+        {/* timeline cards */}
         <div className="m-4 mt-20 px-2 lg:px-24">
           <div className="relative col-span-12 px-4 space-y-6 sm:col-span-8 sm:space-y-8">
             <div className="col-span-12 space-y-12 relative px-4 sm:space-y-8 before:block before:absolute before:top-2 before:bottom-0 before:w-0.5 before:-left-3 before:bg-violet-400">
