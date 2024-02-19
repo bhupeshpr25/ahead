@@ -1,6 +1,6 @@
 "use client";
 
-import { useInView } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
@@ -10,8 +10,10 @@ interface TimelineItem {
 }
 
 export default function Features() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const divRef = useRef(null);
+  const imgRef = useRef(null);
+  const isDivInView = useInView(divRef, { once: true });
+  const isImgInView = useInView(imgRef, { once: true });
 
   const timelineItems: TimelineItem[] = [
     {
@@ -42,15 +44,15 @@ export default function Features() {
   ];
 
   return (
-    <div ref={ref} className="my-20 lg:mt-40">
+    <div ref={divRef} className="my-20 lg:mt-40">
       {/* colored section */}
       <div className="bg-red-50 rounded-3xl m-8 mt-4">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-2 lg:py-32">
           <div
             className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto"
             style={{
-              transform: isInView ? "none" : "translateX(-200px)",
-              opacity: isInView ? 1 : 0,
+              transform: isDivInView ? "none" : "translateX(-200px)",
+              opacity: isDivInView ? 1 : 0,
               transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}
           >
@@ -68,6 +70,13 @@ export default function Features() {
                 alt="Hero"
                 width={1200}
                 height={1200}
+                style={{
+                  transform: isDivInView ? "rotate(0deg)" : "rotate(360deg)",
+                  opacity: isDivInView ? 1 : 0,
+                  transition:
+                    "transform  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s, opacity  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s",
+                  animation: isDivInView ? "none" : "spin  1s linear infinite",
+                }}
               />
             </div>
           </div>
@@ -75,8 +84,8 @@ export default function Features() {
           <div
             className="text-md mt-10 lg:text-2xl lg:mt-0 text-gray-700"
             style={{
-              transform: isInView ? "none" : "scale(0.5)",
-              opacity: isInView ? 1 : 0,
+              transform: isDivInView ? "none" : "scale(0.5)",
+              opacity: isDivInView ? 1 : 0,
               transition:
                 "transform  0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s, opacity   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s",
             }}
@@ -95,20 +104,48 @@ export default function Features() {
       </div>
 
       {/* timeline header */}
-      <section ref={ref} className="container max-w-5xl px-4 py-12 mx-auto">
+      <section ref={divRef} className="container max-w-5xl px-4 py-12 mx-auto">
         <div
           className="my-10"
           style={{
-            transform: isInView ? "none" : "translateX(-200px)",
-            opacity: isInView ? 1 : 0,
+            transform: isDivInView ? "none" : "translateX(-200px)",
+            opacity: isDivInView ? 1 : 0,
             transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 2s",
           }}
         >
           <div className="text-sm lg:text-xl font-semibold">
             Wrong with self-improvement & how we are fixing it
           </div>
-          <div className="mt-4 text-3xl lg:text-5xl font-bold lg:mt-2">
-            Self-improvement. Ugh.
+          <div className="flex items-center justify-start">
+            <motion.div
+              ref={divRef}
+              className="mt-4 text-3xl lg:text-5xl font-bold lg:mt-2"
+              style={{
+                transform: isDivInView ? "none" : "translateX(-200px)",
+                opacity: isDivInView ? 1 : 0,
+                transition:
+                  "all  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s",
+              }}
+            >
+              Self-improvement. Ugh.
+            </motion.div>
+
+            <motion.img
+              ref={imgRef}
+              src="/blue.png"
+              alt=""
+              width={100}
+              height={100}
+              className="ml-4"
+              style={{
+                right: 0,
+                top: "50%",
+                transform: isImgInView ? "translateX(0)" : "translateX(250%)",
+                opacity: isImgInView ? 1 : 0,
+                transition:
+                  "transform   0.9s ease-in-out, opacity   0.5s ease-in-out",
+              }}
+            />
           </div>
         </div>
 

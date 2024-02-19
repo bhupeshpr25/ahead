@@ -38,8 +38,10 @@ const CarouselCard: React.FC<{ card: Card }> = ({ card }) => {
 
 const Carousel: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number>(-1);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const divRef = useRef(null);
+  const imgRef = useRef(null);
+  const isDivInView = useInView(divRef, { once: true });
+  const isImgInView = useInView(imgRef, { once: true });
 
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
@@ -86,17 +88,36 @@ const Carousel: React.FC = () => {
   const repetitions = 3;
 
   return (
-    <div ref={ref}>
-      <motion.div
-        className="text-3xl lg:text-5xl font-bold m-5 mb-20 lg:m-20"
-        style={{
-          transform: isInView ? "none" : "translateX(-200px)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-        }}
-      >
-        Does this sound familiar...
-      </motion.div>
+    <div>
+      <div className="flex items-center justify-start">
+        <motion.div
+          ref={divRef}
+          className="text-3xl lg:text-5xl font-bold m-5 mb-20 lg:m-20"
+          style={{
+            transform: isDivInView ? "none" : "translateX(-200px)",
+            opacity: isDivInView ? 1 : 0,
+            transition: "all  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s",
+          }}
+        >
+          Does this sound familiar...
+        </motion.div>
+
+        <motion.img
+          ref={imgRef}
+          src="/red.png"
+          alt=""
+          width={100}
+          height={100}
+          style={{
+            right: 0,
+            top: "50%",
+            transform: isImgInView ? "translateX(0)" : "translateX(150%)",
+            opacity: isImgInView ? 1 : 0,
+            transition:
+              "transform   0.9s ease-in-out, opacity   0.5s ease-in-out",
+          }}
+        />
+      </div>
 
       <div className="flex overflow-hidden space-x-4 group">
         <div

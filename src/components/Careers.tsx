@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { useInView } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 import Benefits from "./Benefits";
 
 interface Vacancy {
@@ -14,8 +14,10 @@ interface Vacancy {
 export default function Careers() {
   const [isHovered, setIsHovered] = useState(false);
 
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const divRef = useRef(null);
+  const imgRef = useRef(null);
+  const isDivInView = useInView(divRef, { once: true });
+  const isImgInView = useInView(imgRef, { once: true });
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -47,19 +49,19 @@ export default function Careers() {
   ];
 
   return (
-    <div ref={ref}>
+    <div ref={divRef}>
       {/* work with us */}
       <div className="bg-violet-100 rounded-3xl m-8 mt-4">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 flex flex-col lg:grid lg:items-center lg:gap-x-6 lg:px-2 lg:py-32">
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
             <div className="h-full rounded-lg lg:col-span-2">
               {/* left side */}
-              <div className="max-w-2xl lg:mx-0" ref={ref}>
+              <div className="max-w-2xl lg:mx-0" ref={divRef}>
                 <h1
                   className="mt-5 max-w-lg text-2xl font-bold text-gray-900 lg:text-5xl"
                   style={{
-                    transform: isInView ? "none" : "translateX(-200px)",
-                    opacity: isInView ? 1 : 0,
+                    transform: isDivInView ? "none" : "translateX(-200px)",
+                    opacity: isDivInView ? 1 : 0,
                     transition:
                       "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
                   }}
@@ -68,7 +70,26 @@ export default function Careers() {
                 </h1>
                 <div className="w-full my-10 bg-white max-w-lg rounded-xl">
                   <div className="rounded-xl p-6 py-10">
-                    <div className="flex items-center text-3xl">👻</div>
+                    <div className="flex items-center text-3xl">
+                      <motion.img
+                        ref={imgRef}
+                        src="/purple.png"
+                        alt=""
+                        width={50}
+                        height={50}
+                        style={{
+                          transform: isImgInView
+                            ? "rotate(0deg)"
+                            : "rotate(360deg)",
+                          opacity: isImgInView ? 1 : 0,
+                          transition:
+                            "transform  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s, opacity  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s",
+                          animation: isImgInView
+                            ? "none"
+                            : "spin  4s linear infinite",
+                        }}
+                      />
+                    </div>
 
                     <h3 className="mt-4 font-semibold text-lg">About</h3>
 
@@ -99,12 +120,12 @@ export default function Careers() {
       </div>
 
       {/* vacancies */}
-      <div ref={ref} className="my-20 px-8 lg:my-40 lg:px-24">
+      <div ref={divRef} className="my-20 px-8 lg:my-40 lg:px-24">
         <div
           className="text-3xl font-bold my-20 lg:text-5xl"
           style={{
-            transform: isInView ? "none" : "translateX(-200px)",
-            opacity: isInView ? 1 : 0,
+            transform: isDivInView ? "none" : "translateX(-200px)",
+            opacity: isDivInView ? 1 : 0,
             transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 2s",
           }}
         >
