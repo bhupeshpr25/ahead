@@ -49,7 +49,7 @@ export default function Hero() {
             style={{
               transform: isInView ? "none" : "translateX(-200px)",
               opacity: isInView ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}
           >
             <div className="flex">
@@ -95,7 +95,7 @@ export default function Hero() {
                 transform: isInView ? "rotate(0deg)" : "rotate(360deg)",
                 opacity: isInView ? 1 : 0,
                 transition:
-                  "transform  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s, opacity  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s",
+                  "transform  2s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s, opacity  0.9s cubic-bezier(0.17,  0.55,  0.55,  1)  0.5s",
                 animation: isInView ? "none" : "spin  4s linear infinite",
               }}
             />
@@ -109,7 +109,7 @@ export default function Hero() {
                   transform: isInView ? "none" : "scale(0.5)",
                   opacity: isInView ? 1 : 0,
                   transition:
-                    "transform   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s, opacity   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s",
+                    "transform   2s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s, opacity   0.9s cubic-bezier(0.17,   0.55,   0.55,   1)   0.5s",
                 }}
               />
             </div>
