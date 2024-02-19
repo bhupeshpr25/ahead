@@ -1,6 +1,6 @@
 "use client";
 
-import { useInView, motion } from "framer-motion";
+import { useInView, motion, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
@@ -12,8 +12,17 @@ interface TimelineItem {
 export default function Features() {
   const divRef = useRef(null);
   const imgRef = useRef(null);
-  const isDivInView = useInView(divRef, { once: true });
   const isImgInView = useInView(imgRef, { once: true });
+  const isDivInView = useInView(divRef, { once: true });
+
+  const timelineVariants = {
+    initial: { opacity: 0, y: 100 },
+    animate: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.5 * index },
+    }),
+  };
 
   const timelineItems: TimelineItem[] = [
     {
@@ -170,15 +179,23 @@ export default function Features() {
           <div className="relative col-span-12 px-4 space-y-6 sm:col-span-8 sm:space-y-8">
             <div className="col-span-12 space-y-12 relative px-4 sm:space-y-8 before:block before:absolute before:top-2 before:bottom-0 before:w-0.5 before:-left-3 before:bg-violet-400">
               {timelineItems.map((item, index) => (
-                <div key={index} className="flex flex-col">
+                <motion.div
+                  key={index}
+                  className="flex flex-col"
+                  variants={timelineVariants}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true }}
+                  custom={index}
+                >
                   <div className="h-4 w-4 rounded-full bg-violet-400 relative left-[-35px] z-[1] border-8 border-double border-violet-800 animate-pulse"></div>
-                  <div className=" lg:text-gray-500 lg:hover:text-gray-900">
+                  <div>
                     <h3 className="-mt-5 text-xl font-semibold">
                       {item.title}
                     </h3>
                     <p className="mt-3">{item.description}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
