@@ -35,7 +35,7 @@ export default function CallToAction() {
                   <div className="w-12 bg-yellow-600 text-white rounded-full border-8 border-yellow-500 border-dashed">
                     1
                   </div>
-                  <div className="absolute mt-16 -ml-32 text-start text-gray-600 w-96">
+                  <div className="absolute mt-16 -ml-20 text-start text-gray-600 w-96">
                     Answer questions on your social skills
                   </div>
                 </div>
@@ -43,7 +43,7 @@ export default function CallToAction() {
                   <div className="w-12 bg-yellow-600 text-white rounded-full border-8 border-yellow-500 border-dashed">
                     2
                   </div>
-                  <div className="absolute mt-16 -ml-32 text-start text-gray-600 w-96">
+                  <div className="absolute mt-16 -ml-40 text-start text-gray-600 w-96">
                     Let others anonymously answer the same questions about you
                   </div>
                 </div>
@@ -51,7 +51,7 @@ export default function CallToAction() {
                   <div className="w-12 bg-yellow-600 text-white rounded-full border-8 border-yellow-500 border-dashed">
                     3
                   </div>
-                  <div className="absolute mt-16 -ml-32 text-start text-gray-600  w-96">
+                  <div className="absolute mt-16 -ml-56 text-start text-gray-600  w-96">
                     Find out where you and others see things the same way - and
                     where not!
                   </div>

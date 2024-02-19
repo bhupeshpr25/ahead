@@ -52,7 +52,7 @@ export default function Careers() {
     <div ref={divRef}>
       {/* work with us */}
       <div className="bg-violet-100 rounded-3xl m-8 mt-4">
-        <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 flex flex-col lg:grid lg:items-center lg:gap-x-6 lg:px-2 lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 flex flex-col lg:grid lg:items-center lg:gap-x-6 lg:mx-8 lg:px-2 lg:py-32">
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
             <div className="h-full rounded-lg lg:col-span-2">
               {/* left side */}

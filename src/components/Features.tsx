@@ -49,7 +49,7 @@ export default function Features() {
       <div className="bg-red-50 rounded-3xl m-8 mt-4">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-2 lg:py-32">
           <div
-            className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto"
+            className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto lg:mx-4"
             style={{
               transform: isDivInView ? "none" : "translateX(-200px)",
               opacity: isDivInView ? 1 : 0,
